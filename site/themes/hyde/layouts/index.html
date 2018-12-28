@@ -10,11 +10,12 @@
     <h3 class="post-title"> {{ .Key }}</h3>
      <ul>
          {{range .Pages}}
-         <li>{{.Title}}</li>
+         <li>{{.File.LogicalName}}</li>
          {{ end }}
      </ul>
     </div>
     {{end}}
+
 
  
 </div>
