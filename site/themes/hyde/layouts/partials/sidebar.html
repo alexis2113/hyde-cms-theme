@@ -2,16 +2,11 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <h2>{{.Site.Home}}</h2>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+       <li><a href="/">Home</a> </li>
       {{ range .Site.Menus }}
-        <li><a href="{{.URL}}"> {{ .Sections }} </a></li>
+        <h3><a href="{{.URL}}"> {{ .Sections }} </a></h3>
       {{end}}
-    </ul>
-
+    </div>
    
   </div>
 </div>
