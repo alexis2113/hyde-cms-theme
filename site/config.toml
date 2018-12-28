@@ -6,5 +6,4 @@ theme = "hyde"
 [params]
   themeColor = "theme-base-09"
   
-[menu]
-  sectionPagesMenu = "main"
+
