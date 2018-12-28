@@ -5,10 +5,10 @@
      
     </div>
 
-    <ul class="sidebar-nav">
+    <ul class="sidebar-nav" style="display:block">
       <li><a href="/">Home</a> </li>
-      {{ range .Site.Menus.main }}
-        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
+      {{ range .Site.Pages.Section}}
+        <li>{{.}}</li>
       {{end}}
     </ul>
 
