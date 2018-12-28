@@ -49,13 +49,18 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
-      <h2>Logo</h2>
-      <ul class="nav nav-pills nav-stacked">
-       {{ $currentPage := . }}
+     
+  
+     <nav class="sidebar-nav">
+    {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-    <li class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}">{{ .Name }}</li>
+    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
     {{ end }}
-      </ul><br>
+    </nav>
+        
+        
+        
+ 
     </div>
     <br>
     
