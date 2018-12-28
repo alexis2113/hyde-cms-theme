@@ -1,5 +1,5 @@
 {{ partial "head.html" . }}
-<body class="{{ .Site.Params.themeColor }} {{if .Site.Params.layoutReverse}}layout-reverse{{end}}">
+<body class="theme-base-09">
 
 {{ partial "sidebar.html" . }}
 
@@ -7,7 +7,7 @@
     <ul class="posts">
         {{ range .Data.Pages }}
         <li>
-    <a href="{{ .Permalink }}">{{- .Title-}}</a>
+    <a href="{{ .Permalink }}">{{.Title}}</a>
         </li>
         {{ end }}
     </ul>
