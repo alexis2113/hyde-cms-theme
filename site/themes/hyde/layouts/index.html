@@ -3,12 +3,12 @@
 
 {{ partial "sidebar.html" . }}
 
-    <div class="content container">
+<div class="content container">
 <div class="posts">
 
-      {{ range .Data.Pages }}
+     {{ range .Data.Pages }}
 
-    <h4 class="post-title"> {{ .Title }}   </h4>
+    <h4> {{ .Title }}</h4>
  
 
   {{ end }}
