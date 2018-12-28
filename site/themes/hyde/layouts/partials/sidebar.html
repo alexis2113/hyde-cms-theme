@@ -3,9 +3,9 @@
     <div class="sidebar-about">
     
       {{ range .Site.Pages}}
-        <h3><a href="{{.URL}}"> {{ .Sections }} </a></h3>
+        <h3><a href="{{.URL}}"> {{ .Sections }} {{ .Parent }}</a></h3>
       {{end}}
-        <h3><a href="{{.URL}}"> {{ .Parent }} </a></h3>
+        
     </div>
    
   </div>
