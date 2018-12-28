@@ -6,6 +6,9 @@
       {{ range .Site.Menus }}
         <h3><a href="{{.URL}}"> {{ .Sections }} </a></h3>
       {{end}}
+        {{ range .Site.AllPages }}
+        <h4><a href="{{.URL}}"> {{ .HasChildren }} </a></h4>
+      {{end}}
     </div>
    
   </div>
