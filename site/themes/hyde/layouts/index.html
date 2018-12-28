@@ -2,22 +2,21 @@
 <body class="theme-base-09">
 
 {{ partial "sidebar.html" . }}
-    <div class="content container">
+<div class="content container">
 <div class="posts">
+ 
+      {{ range .Site.Pages.GroupBy "Section"  }}
+    <div class="post">
+    <h3 class="post-title"> {{ .Key }}</h3>
+     <ul>
+         {{range .Pages}}
+         <li>{{.Title}}</li>
+         {{ end }}
+     </ul>
+    </div>
+    {{end}}
 
-      {{ range .Site.Pages }}
-  <div class="post">
-    <h3 class="post-title">
-      <a href="{{ .Permalink }}">
-        {{ .Title }}
-      </a>
-    </h3>
-
-   
-
-
-  </div>
-  {{ end }}
+ 
 </div>
 </div>
 
