@@ -19,6 +19,19 @@
 
   </div>
   {{ end }}
+        {{ range .Sections}}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ .Permalink }}">
+        {{ .Name }}
+      </a>
+    </h1>
+
+   
+
+
+  </div>
+  {{ end }}
 </div>
 </div>
 
