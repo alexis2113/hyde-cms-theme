@@ -5,9 +5,9 @@
 
   <div class="content container">
     <ul class="posts">
-        {{ range .Pages }}
+        {{ range .Data.Pages }}
         <li>
-          <span><a href="{{ .Permalink }}">{{ .Section }}</a></span>
+    <a href="{{ .Permalink }}">{{ .Section }}</a>
         </li>
         {{ end }}
     </ul>
