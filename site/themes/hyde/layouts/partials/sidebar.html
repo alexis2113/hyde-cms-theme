@@ -2,15 +2,25 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-     
     </div>
-
-    <ul class="sidebar-nav" >
-      <li><a href="/">Home</a> </li>
-      {{ range .Site.Pages}}
-        <li>{{.Section}}</li>
-      {{end}}
-    </ul>
+    
+    <a href="/">Home</a> 
+    
+    <div class="sidebar-nav" >
+      
+    {{ range .Site.Pages.GroupBy "Section"  }}
+   
+    <h3> {{ .Key }}</h3>
+      
+     <ul>
+         {{range .Pages}}
+         <li>{{.Title}}</li>
+         {{ end }}
+     </ul>
+   
+    {{end}}
+      
+    </div>
 
   
   </div>
