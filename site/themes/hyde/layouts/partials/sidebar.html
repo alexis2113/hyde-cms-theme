@@ -14,7 +14,7 @@
       
      <ul>
          {{range .Pages}}
-         <li>{{.Title}}</li>
+         <li><a href="{{ .Permalink }}">{{.File.LogicalName}}</a></li>
          {{ end }}
      </ul>
    
