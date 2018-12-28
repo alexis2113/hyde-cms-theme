@@ -7,8 +7,8 @@
 
     <ul class="sidebar-nav" >
       <li><a href="/">Home</a> </li>
-      {{ range .Site.Pages.Section}}
-        <li>{{.Name}}</li>
+      {{ range .Site.Pages}}
+        <li>{{.Section}}</li>
       {{end}}
     </ul>
 
