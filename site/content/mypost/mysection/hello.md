@@ -1,4 +1,4 @@
 ---
-title:mytitle
+title : mytitle
 ---
 hello
