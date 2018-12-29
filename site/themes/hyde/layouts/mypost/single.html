@@ -74,7 +74,7 @@
 <div class="w3-container">
 <h2>{{.Title}}</h2>
 <ul>
- <li>{{.File.Dir| safeHTML}}</li>
+ <li>{{.File.Dir| path.Dir}}</li>
  <li>{{.IsNode}}</li>
 </ul> 
 {{.Content}}
