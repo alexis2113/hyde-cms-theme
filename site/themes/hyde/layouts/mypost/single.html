@@ -75,7 +75,7 @@
 <h2>{{.Title}}</h2>
 <ul>
  <li>{{ $myvariable }}</li>
- <li>{{.IsNode}}</li>
+ <li>{{ path.Dir "{{$myvariable}}" }}</li>
 </ul> 
 {{.Content}}
 </div>
