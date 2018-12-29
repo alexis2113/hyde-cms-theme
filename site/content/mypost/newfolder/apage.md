@@ -1,4 +1,4 @@
 ---
-title:aa
+title: aa
 ---
 some contents hahah
