@@ -1,4 +1,4 @@
 ---
-title:bb
+title: bb
 ---
 some other content
