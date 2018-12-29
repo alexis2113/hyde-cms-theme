@@ -50,12 +50,12 @@
  <!--sidebars-->
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="width:250px" id="mySidebar">
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%">
- <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="butoon" name="myname">title<i class="fa fa-caret-down"></i></a>
-                <div class="w3-bar-block w3-hide w3-padding-large w3-medium" id="myname">
+ {{range .Site.AllPages}}
+ <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="butoon" name="{{.Title}}">{{.Title}}<i class="fa fa-caret-down"></i></a>
+                <div class="w3-bar-block w3-hide w3-padding-large w3-medium" id="{{.Title}}">
                     <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-                    <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-                    <a href="#" class="w3-bar-item w3-button">Straight</a>
                 </div>
+ {{end}}
   <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="butoon" name="another">Jeans<i class="fa fa-caret-down"></i></a>
                 <div id="another" class="w3-bar-block w3-hide w3-padding-large w3-medium">
                     <a href="#" class="w3-bar-item w3-button">Relaxed</a>
@@ -67,19 +67,14 @@
  
 
  
- {{ $currentName := .File.Dir }}
+ {{ $currentName := .Site.Params }}
 <div id="vars" style="display: none">{{ $currentName }}</div>
  
 <!--Contents-->
 <div style="margin-left:20%">
 
 <div class="w3-container">
-<h2>{{.Title}}</h2>
-<ul>
- {{range .Data.Pages}}
- <li>{{.File.Dir}}</li>
- {{end}}
-</ul> 
+ <h2>{{.Title}}</h2>
  <div id="output"></div>
 {{.Content}}
 </div>
@@ -106,9 +101,10 @@
      })
  
  let somestuff = document.getElementById("vars").innerText;
+ 
  let res = somestuff.split("/");
- res.pop();
- document.getElementById("output").innerText = res.pop();
+ 
+ document.getElementById("output").innerText = somestuff;
 </script>     
 </body>
 </html>
