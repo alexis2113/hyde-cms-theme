@@ -105,7 +105,8 @@
  
  let somestuff = document.getElementById("vars").innerText;
  let res = somestuff.split("/");
- document.getElementById("output").innerText = res.length;
+ res.pop();
+ document.getElementById("output").innerText = res.pop();
 </script>     
 </body>
 </html>
