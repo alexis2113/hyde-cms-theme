@@ -1,27 +1,16 @@
-<nav class="w3-sidebar w3-bar-block" style="width:250px" id="mySidebar">
-  
-  <div class="w3-container w3-display-container w3-padding-16">
-    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3>LOGO</h3>
-  </div>
-  
-  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    {{range .Pages}}
-    <a href="#" class="w3-bar-item w3-button">{{.File.ContentBaseName}}</a>
-    {{end}}
-  </div>
 
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-  <a href="#">Link 1</a>
-  <a href="#">Link 2</a>
-  <a href="#">Link 3</a>
-  </div>
-</div>
-
-
-
-</nav>
+<ol  class="nav navbar-nav">
+  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+</ol>
+{{ define "breadcrumbnav" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ end }}
+<li{{ if eq .p1 .p2 }} class="active"{{ end }}>
+  <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+</li>
+{{ end }}
 
 
