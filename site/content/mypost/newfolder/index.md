@@ -1,4 +1,0 @@
----
-title: "newfolder"
----
-a section
