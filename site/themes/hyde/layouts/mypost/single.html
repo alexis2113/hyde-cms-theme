@@ -45,25 +45,28 @@
 </style>
 </head>
 <body>
-
+ <!--sidebars-->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="width:250px" id="mySidebar">
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%">
- 
-  <a href="#" class="w3-bar-item w3-button">{{.Title}}</a> 
-  
-
-
- 
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-  <a href="#">Link 1</a>
-  <a href="#">Link 2</a>
-  <a href="#">Link 3</a>
-  </div>
+ <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="butoon" name="myname">title<i class="fa fa-caret-down"></i></a>
+                <div class="w3-bar-block w3-hide w3-padding-large w3-medium" id="myname">
+                    <a href="#" class="w3-bar-item w3-button">Relaxed</a>
+                    <a href="#" class="w3-bar-item w3-button">Bootcut</a>
+                    <a href="#" class="w3-bar-item w3-button">Straight</a>
+                </div>
+  <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="butoon" name="another">Jeans<i class="fa fa-caret-down"></i></a>
+                <div id="another" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+                    <a href="#" class="w3-bar-item w3-button">Relaxed</a>
+                    <a href="#" class="w3-bar-item w3-button">Bootcut</a>
+                    <a href="#" class="w3-bar-item w3-button">Straight</a>
+                </div>
 </div>
+</nav>
+ 
+
  
  
-</div> 
+
  
 <!--Contents-->
 <div style="margin-left:20%">
@@ -74,7 +77,26 @@
 </div>
 
 </div>
-      
+ <!--scripts-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+// Accordion
+    let boxes = "";
+    function myAccFunc(ids) {
+        var x = document.getElementById(ids);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+ d3.selectAll("#butoon")
+     .on("click", function () {
+         boxes = this.name
+         myAccFunc(boxes)
+     })
+</script>     
 </body>
 </html>
 
