@@ -76,7 +76,9 @@
 <div class="w3-container">
 <h2>{{.Title}}</h2>
 <ul>
- <li>{{ $currentName }}</li>
+ {{range .Pages}}
+ <li>{{.File.Dir}}</li>
+ {{end}}
 </ul> 
  <div id="output"></div>
 {{.Content}}
