@@ -68,7 +68,7 @@
 
  
  {{ $currentName := .File.Dir }}
-<div id="vars" style="display: none" value="{{ $currentName}}">{{ $currentName }}</div>
+<div id="vars" style="display: none">{{ $currentName }}</div>
  
 <!--Contents-->
 <div style="margin-left:20%">
@@ -104,8 +104,8 @@
      })
  
  let somestuff = document.getElementById("vars").textContent;
- 
- document.getElementById("output").textContent = somestuff
+ var res = somestuff.split("/");
+ document.getElementById("output").innerHTML = res.pop()
 </script>     
 </body>
 </html>
