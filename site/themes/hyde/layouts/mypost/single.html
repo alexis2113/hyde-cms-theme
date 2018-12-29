@@ -103,9 +103,9 @@
          myAccFunc(boxes)
      })
  
- let somestuff = document.getElementById("vars").textContent;
+ let somestuff = document.getElementById("vars").innerText;
  let res = somestuff.split("/");
- document.getElementById("output").textContent = res.pop();
+ document.getElementById("output").innerText = res[0];
 </script>     
 </body>
 </html>
