@@ -1,0 +1,4 @@
+---
+title: newfolder
+---
+a section
