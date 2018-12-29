@@ -1,4 +1,4 @@
 ---
-title:ctitle
+title: ctitle
 ---
 some content hahah hello
