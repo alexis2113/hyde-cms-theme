@@ -42,6 +42,8 @@
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+
 </style>
 </head>
 <body>
@@ -65,8 +67,8 @@
  
 
  
- {{ $myvariable := .File.Dir }}
-
+ {{ $currentName := .File.Dir }}
+<div id="vars" style="display: none" value="{{ $currentName}}">{{ $currentName }}</div>
  
 <!--Contents-->
 <div style="margin-left:20%">
@@ -74,9 +76,9 @@
 <div class="w3-container">
 <h2>{{.Title}}</h2>
 <ul>
- <li>{{ $myvariable }}</li>
- <li>{{ path.Dir "{{$myvariable}}" }}</li>
+ <li>{{ $currentName }}</li>
 </ul> 
+ <div id="output"></div>
 {{.Content}}
 </div>
 
@@ -100,6 +102,10 @@
          boxes = this.name
          myAccFunc(boxes)
      })
+ 
+ let somestuff = document.getElementById("vars").textContent;
+ 
+ document.getElementById("output").textContent = somestuff
 </script>     
 </body>
 </html>
