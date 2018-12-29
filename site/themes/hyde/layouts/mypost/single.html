@@ -50,7 +50,7 @@
  <!--sidebars-->
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="width:250px" id="mySidebar">
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%">
- {{range .Content.RegularPages}}
+ {{range .Pages}}
  <a href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="butoon" name="{{.Title}}">{{.Title}}<i class="fa fa-caret-down"></i></a>
                 <div class="w3-bar-block w3-hide w3-padding-large w3-medium" id="{{.Title}}">
                     <a href="#" class="w3-bar-item w3-button">Relaxed</a>
@@ -67,7 +67,7 @@
  
 
  
- {{ $currentName := .Params}}
+ {{ $currentName := .Keywords}}
 <div id="vars" style="display: none">{{ $currentName }}</div>
  
 <!--Contents-->
