@@ -76,11 +76,7 @@
 <div class="w3-container">
  <h2>{{.Title}}</h2>
  <div id="output"></div>
- <ul>
-  {{range .Site.AllPages}}
-  <li>{{.Permalink| safeHTML}}</li>
-  {{end}}
-  </ul>
+{{partial "breadcrumb.html" . }}
 {{.Content}}
 </div>
 
