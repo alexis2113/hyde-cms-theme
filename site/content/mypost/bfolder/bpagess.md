@@ -1,6 +1,6 @@
 ---
-title: ctitle
+title: "ctitle"
 menu:
-  section: bfolder
+  section:" bfolder"
 ---
 some content hahah 
