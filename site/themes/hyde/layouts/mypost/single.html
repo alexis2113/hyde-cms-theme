@@ -76,7 +76,7 @@
 <div class="w3-container">
  <h2>{{.Title}}</h2>
  <div id="output"></div>
-{{ .Page.Scratch.Set "greeting" "Hello" }}
+{{ .Scratch.Set "greeting" "Hello" }}
 {{.Content}}
  <div id="vars" style="display: none">{{ .Scratch.Get "greetings"  }}</div>
 </div>
