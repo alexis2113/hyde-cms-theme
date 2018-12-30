@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Visualing</title>
+</head>
+<body>
+
+    <h2>Grouping data</h2>
+    <button id="step1" onclick="drawAirlinesChart(airlines)">Step1</button>
+    <svg id="out1"></svg>
+    <div id="out2" style="word-wrap: break-word; white-space: pre-wrap;"></div>
+
+
+    <script src=" https://d3js.org/d3.v5.min.js"></script>
+
+    <script src='http://vega.github.io/datalib/datalib.min.js'></script>
+    <!--Code section
+     <script >
+         let store = []
+         d3.csv("routes.csv").then(d => groupby(d))
+
+         let ky = "AirlineID"
+         let kname = "AirlineName"
+         let kc = "AirlineCountry"
+
+
+         let byid = []
+         let results = d3.select("#out1")
+         let x = ""
+         let gd = []
+
+
+         function groupby(d) {
+             store = Array.from(d)
+             alert("done")
+             byid = d3.nest()
+                 .key(function (d) { return d.AirlineID; })
+                 .key(function (d) { return d.AirlineName; })
+                 .rollup(function (v) {
+                     return {
+                         count: v.length,
+                         country:
+                             v.AirlineCountry
+
+                     };
+                 })
+                 .entries(store);
+             byid.forEach(function (d) {
+                 d.AirlineID = d.key;
+                 d.Airline = d.values[0];
+                 d.AirlineName = d.Airline.key
+                 d.count = d.Airline.value.count
+             });
+             byid.flatMap(e => (e))
+
+             document.getElementById("out2").innerHTML=JSON.stringify(byid)
+             }
+
+
+     </script>
+    -->
+
+    <script>
+        let airlines = [{ "key": "24", "values": [{ "key": "American Airlines", "value": { "count": 2340 } }], "AirlineID": "24", "Airline": { "key": "American Airlines", "value": { "count": 2340 } }, "AirlineName": "American Airlines", "count": 2340 }, { "key": "214", "values": [{ "key": "Air Berlin", "value": { "count": 786 } }], "AirlineID": "214", "Airline": { "key": "Air Berlin", "value": { "count": 786 } }, "AirlineName": "Air Berlin", "count": 786 }, { "key": "330", "values": [{ "key": "Air Canada", "value": { "count": 701 } }], "AirlineID": "330", "Airline": { "key": "Air Canada", "value": { "count": 701 } }, "AirlineName": "Air Canada", "count": 701 }, { "key": "137", "values": [{ "key": "Air France", "value": { "count": 1063 } }], "AirlineID": "137", "Airline": { "key": "Air France", "value": { "count": 1063 } }, "AirlineName": "Air France", "count": 1063 }, { "key": "596", "values": [{ "key": "Alitalia", "value": { "count": 877 } }], "AirlineID": "596", "Airline": { "key": "Alitalia", "value": { "count": 877 } }, "AirlineName": "Alitalia", "count": 877 }, { "key": "751", "values": [{ "key": "Air China", "value": { "count": 1236 } }], "AirlineID": "751", "Airline": { "key": "Air China", "value": { "count": 1236 } }, "AirlineName": "Air China", "count": 1236 }, { "key": "1767", "values": [{ "key": "China Southern Airlines", "value": { "count": 1422 } }], "AirlineID": "1767", "Airline": { "key": "China Southern Airlines", "value": { "count": 1422 } }, "AirlineName": "China Southern Airlines", "count": 1422 }, { "key": "2009", "values": [{ "key": "Delta Air Lines", "value": { "count": 1977 } }], "AirlineID": "2009", "Airline": { "key": "Delta Air Lines", "value": { "count": 1977 } }, "AirlineName": "Delta Air Lines", "count": 1977 }, { "key": "1316", "values": [{ "key": "AirTran Airways", "value": { "count": 726 } }], "AirlineID": "1316", "Airline": { "key": "AirTran Airways", "value": { "count": 726 } }, "AirlineName": "AirTran Airways", "count": 726 }, { "key": "4296", "values": [{ "key": "Ryanair", "value": { "count": 2482 } }], "AirlineID": "4296", "Airline": { "key": "Ryanair", "value": { "count": 2482 } }, "AirlineName": "Ryanair", "count": 2482 }, { "key": "2822", "values": [{ "key": "Iberia Airlines", "value": { "count": 829 } }], "AirlineID": "2822", "Airline": { "key": "Iberia Airlines", "value": { "count": 829 } }, "AirlineName": "Iberia Airlines", "count": 829 }, { "key": "3090", "values": [{ "key": "KLM Royal Dutch Airlines", "value": { "count": 826 } }], "AirlineID": "3090", "Airline": { "key": "KLM Royal Dutch Airlines", "value": { "count": 826 } }, "AirlineName": "KLM Royal Dutch Airlines", "count": 826 }, { "key": "3320", "values": [{ "key": "Lufthansa", "value": { "count": 919 } }], "AirlineID": "3320", "Airline": { "key": "Lufthansa", "value": { "count": 919 } }, "AirlineName": "Lufthansa", "count": 919 }, { "key": "1758", "values": [{ "key": "China Eastern Airlines", "value": { "count": 1211 } }], "AirlineID": "1758", "Airline": { "key": "China Eastern Airlines", "value": { "count": 1211 } }, "AirlineName": "China Eastern Airlines", "count": 1211 }, { "key": "4951", "values": [{ "key": "Turkish Airlines", "value": { "count": 640 } }], "AirlineID": "4951", "Airline": { "key": "Turkish Airlines", "value": { "count": 640 } }, "AirlineName": "Turkish Airlines", "count": 640 }, { "key": "2297", "values": [{ "key": "easyJet", "value": { "count": 1130 } }], "AirlineID": "2297", "Airline": { "key": "easyJet", "value": { "count": 1130 } }, "AirlineName": "easyJet", "count": 1130 }, { "key": "5265", "values": [{ "key": "US Airways", "value": { "count": 1947 } }], "AirlineID": "5265", "Airline": { "key": "US Airways", "value": { "count": 1947 } }, "AirlineName": "US Airways", "count": 1947 }, { "key": "4547", "values": [{ "key": "Southwest Airlines", "value": { "count": 1140 } }], "AirlineID": "4547", "Airline": { "key": "Southwest Airlines", "value": { "count": 1140 } }, "AirlineName": "Southwest Airlines", "count": 1140 }, { "key": "4611", "values": [{ "key": "Shenzhen Airlines", "value": { "count": 789 } }], "AirlineID": "4611", "Airline": { "key": "Shenzhen Airlines", "value": { "count": 789 } }, "AirlineName": "Shenzhen Airlines", "count": 789 }]
+    </script>
+
+
+    <script>
+        let container = d3.select("svg")
+
+       
+        function getAirlinesChartConfig() {
+            let width = 350;
+            let height = 400;
+            let margin = {
+                top: 10,
+                bottom: 50,
+                left: 130,
+                right: 10
+            }
+            //The body is the are that will be occupied by the bars.
+            let bodyHeight = height - margin.top - margin.bottom
+            let bodyWidth = width - margin.left - margin.right
+
+            //The container is the SVG where we will draw the chart. In our HTML is the svg tah with the id AirlinesChart
+
+            d3.select("svg")
+                .attr("width", width)
+                .attr("height", height)
+
+
+            
+            return { width, height, margin, bodyHeight, bodyWidth, container }
+        }
+
+      
+
+        function getAirlinesChartScales(airlines, config) {
+            let { bodyWidth, bodyHeight } = config;
+            alert(bodyWidth)
+            let maximunCount = d3.max(airlines.map(e => e.count))
+            alert(maximunCount)
+            let xScale = d3.scaleLinear()
+                .range([0, bodyWidth])
+                .domain([0, maximunCount])
+
+
+            let yScale = d3.scaleBand()
+                .range([0, bodyHeight])
+                .domain(airlines.map(a => a.AirlineName)) //The domain is the list of ailines names
+                .padding(0.2)
+           
+            return { xScale, yScale }
+        }
+
+        let config = getAirlinesChartConfig()
+        let scales = getAirlinesChartScales(airlines, config)
+
+
+       
+
+        function drawBarsAirlinesChart(airlines, scales, config) {
+            let { margin, container } = config; // 
+            let { xScale, yScale } = scales
+            let body = container
+                .append("g")
+                .style("transform",
+                    `translate(${margin.left}px,${margin.top}px)`
+                )
+
+            let bars = body
+                .selectAll(".bar")
+                .data(airlines)
+                .enter()
+                .append("rect")
+                .attr("class","bar")
+               
+           
+                
+            console.log(bars)
+            console.log(bars)
+
+
+            //Adding a rect tag for each airline
+
+            d3.selectAll(".bar")
+                .attr("height", yScale.bandwidth())
+                .attr("y", (d) => yScale(d.AirlineName))
+                .attr("width", (d) => xScale(d.count))
+                .attr("x", (d) => xScale())
+                .attr("fill", "#2a5599")
+        }
+
+        console.log(scales.xScale(airlines.count))
+
+        function drawAxesAirlinesChart(airlines, scales, config) {
+            let { xScale, yScale } = scales
+            let { container, margin, height } = config;
+            let axisX = d3.axisBottom(xScale)
+                .ticks(5)
+           
+
+            container.append("g")
+                .style("transform",
+                    `translate(${margin.left}px,${height - margin.bottom}px)`
+                )
+                .call(axisX)
+
+            let axisY = d3.axisLeft(yScale)
+                .ticks(5)
+            container.append("g")
+                .style("transform",
+                    `translate(${margin.left}px,${margin.top}px)`
+                )
+                .call(axisY)
+
+           
+}
+        drawAxesAirlinesChart(airlines, scales, config)
+        drawBarsAirlinesChart(airlines, scales, config)
+    </script>
+</body>
+</html>
