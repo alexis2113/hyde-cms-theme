@@ -68,7 +68,7 @@
 
  
 
-<div id="vars" style="display: none">{{ .Scratch.Get "greetings"  }}</div>
+
  
 <!--Contents-->
 <div style="margin-left:20%">
@@ -78,6 +78,7 @@
  <div id="output"></div>
 {{ .Page.Scratch.Set "greeting" "Hello" }}
 {{.Content}}
+ <div id="vars" style="display: none">{{ .Scratch.Get "greetings"  }}</div>
 </div>
 
 </div>
