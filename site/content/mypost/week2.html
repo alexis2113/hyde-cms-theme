@@ -92,9 +92,7 @@ title: "barchart"
 
         function getAirlinesChartScales(airlines, config) {
             let { bodyWidth, bodyHeight } = config;
-            alert(bodyWidth)
             let maximunCount = d3.max(airlines.map(e => e.count))
-            alert(maximunCount)
             let xScale = d3.scaleLinear()
                 .range([0, bodyWidth])
                 .domain([0, maximunCount])
@@ -140,7 +138,7 @@ title: "barchart"
                 .attr("fill", "#2a5599")
         }
 
-        console.log(scales.xScale(airlines.count))
+       
 
         function drawAxesAirlinesChart(airlines, scales, config) {
             let { xScale, yScale } = scales
