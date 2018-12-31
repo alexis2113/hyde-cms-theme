@@ -10,7 +10,7 @@
       
     {{ range .Site.Pages.GroupBy "Section"  }}
    
-    <h4><a herf="{{ .Permalink }}">{{ .Key }}</a></h4>
+   <a herf="{{ .Permalink }}"> <h4>{{ .Key }}</h4></a>
       
      <ul>
          {{range .Pages}}
