@@ -4,7 +4,7 @@ title: "Grouping_data"
 ### Grouping data using d3.nest
 
 {{<highlight html>}}
-   <script>      
+    
          let store = []
          d3.csv("routes.csv").then(d => groupby(d))
 
@@ -44,5 +44,5 @@ title: "Grouping_data"
 
              document.getElementById("out2").innerHTML=JSON.stringify(byid)
              
-</script>  
+
 {{</highlight>}}
