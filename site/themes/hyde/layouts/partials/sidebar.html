@@ -10,11 +10,11 @@
       
     {{ range .Site.Pages.GroupBy "Section"  }}
    
-    <h3> {{ .Key }}</h3>
+    <a herf="{{ .Permalink }}"><h4>{{ .Key }}</h4></a>
       
      <ul>
          {{range .Pages}}
-         <li><a href="{{ .Permalink }}">{{.File.LogicalName}}</a></li>
+         <li><a href="{{ .Permalink }}">{{.Title}}</a></li>
          {{ end }}
      </ul>
    
