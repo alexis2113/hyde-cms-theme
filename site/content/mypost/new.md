@@ -1,5 +1,6 @@
 ---
 title: "Grouping_data"
+include_toc = true
 ---
 ### Grouping data using d3.nest
 
@@ -44,3 +45,4 @@ title: "Grouping_data"
 
              document.getElementById("out2").innerHTML=JSON.stringify(byid)
 
+### another section
