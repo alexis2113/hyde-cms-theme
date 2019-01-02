@@ -29,6 +29,9 @@ title: "colors"
       <h4>d3.schemeSweetchill</h4>
     <p id="colors6"></p>
     
+     <h4>d3.schemeCute</h4>
+    <p id="colors7"></p>
+    
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <script>
@@ -121,6 +124,21 @@ title: "colors"
             .append("div")
             .text(d3.schemeSweetchill)
         co = d3.select("#colors6").append("svg")
+        co.selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("r", 6)
+            .attr("cx", d3.scaleLinear().domain([-1, 25]).range([0, 500]))
+            .attr("cy", 10)
+            .attr("fill", sc);
+        
+      d3.schemeCute = ["#F6D4D5","#E6ADC6","#C3A6CD","#A6AFD8","#859BCD","#63B8B3","#C4DB9E","#B1BB89","#FEEBA7","#94A6B2"]
+      sc = d3.scaleOrdinal().range(d3.schemeCute)
+        d3.select("#colors7")
+            .append("div")
+            .text(d3.schemeCute)
+        co = d3.select("#colors7").append("svg")
         co.selectAll("circle")
             .data(data)
             .enter()
