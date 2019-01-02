@@ -32,6 +32,8 @@ title: "colors"
      <h4>d3.schemeCute</h4>
     <p id="colors7"></p>
     
+     <h4>d3.schemeMirmir</h4>
+    <p id="colors8"></p>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <script>
@@ -139,6 +141,21 @@ title: "colors"
             .append("div")
             .text(d3.schemeCute)
         co = d3.select("#colors7").append("svg")
+        co.selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("r", 6)
+            .attr("cx", d3.scaleLinear().domain([-1, 25]).range([0, 500]))
+            .attr("cy", 10)
+            .attr("fill", sc);
+        
+         d3.schemeMirmir = ["#FED19A","#E5B19B","#A9A79B","#98A19C","#819D9C","#67999A","#4A9A99","#1A7B9B","#457C9B","#6E7B9B","#9B7C9C","#CC7B9B","#CCA69D","	#CCC39C","#CCE39B","#CCFE9D"]
+      sc = d3.scaleOrdinal().range( d3.schemeMirmir)
+        d3.select("#colors8")
+            .append("div")
+            .text( d3.schemeMirmir)
+        co = d3.select("#colors8").append("svg")
         co.selectAll("circle")
             .data(data)
             .enter()
