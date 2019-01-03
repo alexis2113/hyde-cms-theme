@@ -46,8 +46,9 @@ title: "colors"
             .append("div")
             .text(d3.schemeSet3)
 
-
+         d3.schemeSet = ["#DBDFF0","#4E3D42","#956682","#C2A0BA","#DFCDDA","#E8E6EC","#E8EAE9","#E8E0E0","#AA9B9B","#D3B3B9","#EFE1E6"]
         let data = d3.range(20)
+       c20c = d3.scaleOrdinal().range(d3.schemeSet)
         let co = d3.select("#colors").append("svg")
         co.selectAll("circle")
             .data(data)
